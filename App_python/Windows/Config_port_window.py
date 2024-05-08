@@ -1,16 +1,15 @@
-from PyQt6.QtWidgets import QMainWindow, QFrame, QVBoxLayout
 from App_python.Config.Button import Button
 from App_python.Config.ComboBox import ComboBox
 from App_python.Config.Label import Label
-from App_python.Config.Libraries_and_colors import principal_color, background_color
-import serial.tools.list_ports
+from App_python.Config.Libraries_and_colors import (background_color, QMainWindow,
+                                                    QFrame, QVBoxLayout, comports)
 
 
 class ConfigPortWindow(QMainWindow):
     def __init__(self):
         super().__init__()
         self.ports = ["-"]
-        for port in serial.tools.list_ports.comports():
+        for port in comports():
             self.ports.append(port.name)
 
         self.setStyleSheet(f"background-color: {background_color}")

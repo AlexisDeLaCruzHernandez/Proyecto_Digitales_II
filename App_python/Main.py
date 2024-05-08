@@ -1,4 +1,4 @@
-from PyQt6.QtWidgets import QApplication
+from App_python.Config.Libraries_and_colors import QApplication
 from App_python.Windows.Config_port_window import ConfigPortWindow
 
 
