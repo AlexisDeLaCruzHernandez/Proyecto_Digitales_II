@@ -1,12 +1,11 @@
-from PyQt6.QtWidgets import QPushButton
-from App_python.Config.Colors import principal_color, background_color
+from App_python.Config.Libraries_and_colors import QPushButton, principal_color, background_color
 
 
 class Button(QPushButton):
     def __init__(self, text):
         super().__init__()
         self.setText(text)
-        self.setFixedSize(85, 30)
+        self.setFixedSize(75, 30)
         self.setStyleSheet(
             "Button {"f"""
                 font: bold 15px;

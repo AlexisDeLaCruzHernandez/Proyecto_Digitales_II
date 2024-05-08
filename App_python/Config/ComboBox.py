@@ -1,4 +1,4 @@
-from PyQt6.QtWidgets import QComboBox
+from App_python.Config.Libraries_and_colors import QComboBox, principal_color, background_color
 
 
 class ComboBox(QComboBox):

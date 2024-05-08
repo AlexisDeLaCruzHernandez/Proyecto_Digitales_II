@@ -1,7 +1,8 @@
 from PyQt6.QtWidgets import QMainWindow, QFrame, QVBoxLayout
 from App_python.Config.Button import Button
 from App_python.Config.ComboBox import ComboBox
-from App_python.Config.Colors import principal_color, background_color
+from App_python.Config.Label import Label
+from App_python.Config.Libraries_and_colors import principal_color, background_color
 import serial.tools.list_ports
 
 
@@ -17,9 +18,11 @@ class ConfigPortWindow(QMainWindow):
         layout = QVBoxLayout()
 
         self.select_port = ComboBox(self.ports)
-        self.button = Button("Ejemplo")
-        layout.addWidget(self.button)
+        self.connect = Button("Conectar")
+        self.label = Label("Puertos:")
+        layout.addWidget(self.label)
         layout.addWidget(self.select_port)
+        layout.addWidget(self.connect)
 
         frame = QFrame()
         frame.setLayout(layout)
