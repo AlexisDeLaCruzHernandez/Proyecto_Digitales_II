@@ -29,8 +29,8 @@ void I2C_Inicializacion (void) {
 	i2c_master_config_t  i2config;
 	CLOCK_Select (kI2C1_Clk_From_MainClk);
 	CLOCK_EnableClock (kCLOCK_Swm);
-	SWM_SetMovablePinSelect (SWM0, kSWM_I2C1_SDA, kSWM_PortPin_P0_26);
-	SWM_SetMovablePinSelect (SWM0, kSWM_I2C1_SCL, kSWM_PortPin_P0_27);
+	SWM_SetMovablePinSelect (SWM0, kSWM_I2C1_SDA, kSWM_PortPin_P0_27);
+	SWM_SetMovablePinSelect (SWM0, kSWM_I2C1_SCL, kSWM_PortPin_P0_28);
 	CLOCK_DisableClock (kCLOCK_Swm);
 	I2C_MasterGetDefaultConfig (&i2config);
 	i2config.baudRate_Bps = baudRate;
