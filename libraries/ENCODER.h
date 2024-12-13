@@ -9,7 +9,7 @@
 #define ENCODER_A 9 // Pin encoder A, en la placa es el clk
 #define ENCODER_B 8 // Pin encoder B, en la placa es el dt
 
-#define UNIDAD_DISTANCIA 1 // Cuanta distancia equivale un pulso
+#define UNIDAD_DISTANCIA 5 // Cuanta distancia equivale un pulso
 
 void ENCODER_Inicializacion (void); // Inicializa los pines y configura las interrupciones
 void ENCODER_Activo (void); // Habilito la interrupción
