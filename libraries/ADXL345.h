@@ -7,7 +7,7 @@
 
 #define PI 3.14159265359
 
-#define ADDRESS_ADXL345 0x1D // El pin SDO está en alto
+#define ADDRESS_ADXL345 0x53 // El pin SDO está en bajo
 
 #define INT_ENABLE 0x2E
 #define BW_RATE 0x2C
