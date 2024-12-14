@@ -63,9 +63,9 @@ void toggle_op_c (menu_t menu);
 void toggle_op_d (menu_t menu);
 void mostrar_menu (menu_t menu, uint8_t *positivo, uint8_t *negativo, uint8_t *centimetros, uint8_t *metros);
 void menu_independiente (menu_t menu, opcion_t op, uint8_t numeros_configuracion, uint8_t con_alarma,
-						 gravedad_t *gravedad, int16_t *angulo, int16_t *angulo_resultante,
-						 int16_t angulo_cero, int32_t *distancia, uint8_t *positivo, uint8_t *negativo,
-						 uint8_t *metros, uint8_t *centimetros);
+			 gravedad_t *gravedad, int16_t *angulo, int16_t *angulo_resultante,
+			 int16_t angulo_cero, int32_t *distancia, uint8_t *positivo, uint8_t *negativo,
+			 uint8_t *metros, uint8_t *centimetros);
 
 /*
  * op: opcion que está activa en el menu
@@ -76,7 +76,7 @@ void menu_independiente (menu_t menu, opcion_t op, uint8_t numeros_configuracion
  */
 uint8_t tecla_a (opcion_t *op, menu_t *menu, uint8_t *con_alarma, modo_t *modo, uint8_t *numeros_configuracion);
 uint8_t tecla_b (opcion_t *op, menu_t *menu, uint8_t *con_alarma, modo_t *modo, uint8_t *numeros_configuracion,
-				 int16_t *angulo_cero, int16_t angulo, int32_t *distancia, gravedad_t *gravedad);
+		 int16_t *angulo_cero, int16_t angulo, int32_t *distancia, gravedad_t *gravedad);
 uint8_t tecla_c (opcion_t *op, menu_t *menu, uint8_t con_alarma, int16_t *angulo_cero, int32_t *distancia);
 uint8_t tecla_d (opcion_t *op, menu_t *menu, gravedad_t *gravedad);
 void tecla_num (opcion_t *op, menu_t *menu, uint8_t *numeros_configuracion, uint8_t *boton);
