@@ -9,8 +9,8 @@
 
 int8_t FLASH_Busqueda (void);
 void FLASH_Lectura (uint8_t *contraste, uint8_t *volumen, uint8_t *version,
-					  int16_t *angulo_alarma, int32_t *distancia_alarma);
+		    int16_t *angulo_alarma, int32_t *distancia_alarma);
 void FLASH_Guardado (uint8_t contraste, uint8_t volumen, uint8_t *version,
-					int16_t angulo_alarma, int32_t distancia_alarma);
+		     int16_t angulo_alarma, int32_t distancia_alarma);
 
 #endif /* FLASH_H_ */
