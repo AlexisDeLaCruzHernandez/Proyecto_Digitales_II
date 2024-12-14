@@ -5,7 +5,7 @@ uint8_t tecla_c (opcion_t *op, menu_t *menu, uint8_t con_alarma, int16_t *angulo
 		switch (*op) {
 		case ninguno: break;
 		case op_a:
-			if (*menu != config_general && *menu != config_grados && *menu != config_distancia)	toggle_op_a (*menu);
+			if (*menu != config_general && *menu != config_grados && *menu != config_distancia) toggle_op_a (*menu);
 			break;
 		case op_b:
 			if (*menu != config_general && *menu != config_grados && *menu != config_distancia) toggle_op_b (*menu);
