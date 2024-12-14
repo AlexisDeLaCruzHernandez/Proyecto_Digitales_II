@@ -7,12 +7,12 @@ El informe completo se encuentra en el PDF
 
 ## Esquematico del proyecto
 
-![](https://drive.google.com/file/d/1jLdtL3wP3tD-N-HqBO1bIeqOwREW9lH1/view?usp=sharing "Esquematico del proyecto")
+![](https://github.com/AlexisDeLaCruzHernandez/Proyecto_Digitales_II/blob/main/Imagenes%20proyecto%20digitales%20II/Esquematico.JPG "Esquematico del proyecto")
 
 ## Placa realizada
 
-![](https://github.com/AlexisDeLaCruzHernandez/Imagenes/blob/main/Proyecto%20digitales%20II/Placa%20lado%20cobre.jpg "Lado cobre")
+![](https://github.com/AlexisDeLaCruzHernandez/Proyecto_Digitales_II/blob/main/Imagenes%20proyecto%20digitales%20II/Placa%20lado%20cobre.jpg "Lado cobre")
 
-![](https://github.com/AlexisDeLaCruzHernandez/Imagenes/blob/main/Proyecto%20digitales%20II/Placa%20sin%20LPC.jpeg "Lado componentes")
+![](https://github.com/AlexisDeLaCruzHernandez/Proyecto_Digitales_II/blob/main/Imagenes%20proyecto%20digitales%20II/Placa%20sin%20LPC.jpeg "Lado componentes")
 
-![](https://github.com/AlexisDeLaCruzHernandez/Imagenes/blob/main/Proyecto%20digitales%20II/Placa%20con%20todo.jpg "Proyecto armado")
+![](https://github.com/AlexisDeLaCruzHernandez/Proyecto_Digitales_II/blob/main/Imagenes%20proyecto%20digitales%20II/Placa%20con%20todo.jpg "Proyecto armado")
