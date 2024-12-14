@@ -5,22 +5,22 @@ volatile uint16_t flag_alarma = 0;
 volatile uint8_t DAC_on = 2, flag_buzzer = 0;
 
 void SCTIMER_Inicializacion (void) {
-    sctimer_pwm_signal_param_t pwmParam;
-    sctimer_config_t sctimerInfo;
-    SCTIMER_GetDefaultConfig (&sctimerInfo);
-    SCTIMER_Init (SCT0, &sctimerInfo);
-    pwmParam.output = kSCTIMER_Out_4;
-    pwmParam.level = kSCTIMER_LowTrue;
-    pwmParam.dutyCyclePercent = 99;
-    SCTIMER_SetupPwm (SCT0, &pwmParam, kSCTIMER_CenterAlignedPwm, 1600, CLOCK_GetFreq (kCLOCK_Fro), &evento_pwm);
-    SCTIMER_StopTimer (SCT0, kSCTIMER_Counter_U);
-    SCT0->OUTPUT |= (1 << 4);
-    CLOCK_EnableClock (kCLOCK_Swm);
-    SWM_SetMovablePinSelect (SWM0, kSWM_SCT_OUT4, kSWM_PortPin_P1_0);
-    CLOCK_DisableClock (kCLOCK_Swm);
-    SCTIMER_CreateAndScheduleEvent (SCT0, kSCTIMER_OutputRiseEvent, 0, 4, kSCTIMER_Counter_U, &evento_periodo);
-    SCTIMER_EnableInterrupts (SCT0, 1 << evento_periodo);
-    EnableIRQ(SCT0_IRQn);
+    	sctimer_pwm_signal_param_t pwmParam;
+    	sctimer_config_t sctimerInfo;
+    	SCTIMER_GetDefaultConfig (&sctimerInfo);
+    	SCTIMER_Init (SCT0, &sctimerInfo);
+    	pwmParam.output = kSCTIMER_Out_4;
+    	pwmParam.level = kSCTIMER_LowTrue;
+    	pwmParam.dutyCyclePercent = 99;
+    	SCTIMER_SetupPwm (SCT0, &pwmParam, kSCTIMER_CenterAlignedPwm, 1600, CLOCK_GetFreq (kCLOCK_Fro), &evento_pwm);
+    	SCTIMER_StopTimer (SCT0, kSCTIMER_Counter_U);
+    	SCT0->OUTPUT |= (1 << 4);
+    	CLOCK_EnableClock (kCLOCK_Swm);
+    	SWM_SetMovablePinSelect (SWM0, kSWM_SCT_OUT4, kSWM_PortPin_P1_0);
+    	CLOCK_DisableClock (kCLOCK_Swm);
+    	SCTIMER_CreateAndScheduleEvent (SCT0, kSCTIMER_OutputRiseEvent, 0, 4, kSCTIMER_Counter_U, &evento_periodo);
+    	SCTIMER_EnableInterrupts (SCT0, 1 << evento_periodo);
+    	EnableIRQ(SCT0_IRQn);
 }
 
 void DAC_Inicializacion (void) {
