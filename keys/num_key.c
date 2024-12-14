@@ -66,13 +66,13 @@ void tecla_num (opcion_t *op, menu_t *menu, uint8_t *numeros_configuracion, uint
 			}
 			break;
 		}
-	    if (*numeros_configuracion == 5) {
-	    	*numeros_configuracion = 0;
-	    	angulo_alarma = angulo_alarma * signo_angulo_alarma;
-	    	toggle_op_a (*menu);
-	    	cambio_de_config = 1;
-	    	*op = ninguno;
-	    }
+	    	if (*numeros_configuracion == 5) {
+	    		*numeros_configuracion = 0;
+	    		angulo_alarma = angulo_alarma * signo_angulo_alarma;
+	    		toggle_op_a (*menu);
+	    		cambio_de_config = 1;
+	    		*op = ninguno;
+	    	}
 		break;
 	case config_distancia:
 		if (*numeros_configuracion < 4) {
@@ -86,16 +86,16 @@ void tecla_num (opcion_t *op, menu_t *menu, uint8_t *numeros_configuracion, uint
 			OLED_EscribirNumero (55, 26, *boton - 48, Encender_Pixel);
 		}
 		(*numeros_configuracion) ++;
-	    if (*numeros_configuracion == 5) {
-	    	*numeros_configuracion = 0;
-	    	if (unidad_distancia_alarma == 100) {
-	    		distancia_alarma = distancia_alarma * unidad_distancia_alarma;
-	    		// Si está en metros se guarda en centimetros la alarma
+	    	if (*numeros_configuracion == 5) {
+	    		*numeros_configuracion = 0;
+	    		if (unidad_distancia_alarma == 100) {
+	    			distancia_alarma = distancia_alarma * unidad_distancia_alarma;
+	    			// Si está en metros se guarda en centimetros la alarma
+	    		}
+	    		toggle_op_a (*menu);
+	    		cambio_de_config = 1;
+	    		*op = ninguno;
 	    	}
-	    	toggle_op_a (*menu);
-	    	cambio_de_config = 1;
-	    	*op = ninguno;
-	    }
 		break;
 	}
 }
