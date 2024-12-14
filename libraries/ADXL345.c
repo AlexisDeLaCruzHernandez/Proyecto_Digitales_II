@@ -1,21 +1,21 @@
 #include "ADXL345.h"
 
 void ADXL345_Comando (uint8_t direccionRegistro, uint8_t valor) {
-    i2c_master_transfer_t masterXfer;
+	i2c_master_transfer_t masterXfer;
 
-    uint8_t data[2];
-    data[0] = direccionRegistro; // Dirección del registro
-    data[1] = valor;             // Valor a escribir
+    	uint8_t data[2];
+    	data[0] = direccionRegistro; // Dirección del registro
+    	data[1] = valor;             // Valor a escribir
 
-    masterXfer.slaveAddress = ADDRESS_ADXL345;
-    masterXfer.direction = kI2C_Write;
-    masterXfer.subaddress = 0;
-    masterXfer.subaddressSize = 0;
-    masterXfer.data = data;
-    masterXfer.dataSize = sizeof(data);
-    masterXfer.flags = kI2C_TransferDefaultFlag;
+    	masterXfer.slaveAddress = ADDRESS_ADXL345;
+    	masterXfer.direction = kI2C_Write;
+    	masterXfer.subaddress = 0;
+    	masterXfer.subaddressSize = 0;
+    	masterXfer.data = data;
+    	masterXfer.dataSize = sizeof(data);
+    	masterXfer.flags = kI2C_TransferDefaultFlag;
 
-    I2C_MasterTransferBlocking(I2C1, &masterXfer);
+    	I2C_MasterTransferBlocking(I2C1, &masterXfer);
 }
 
 void ADXL345_Configuracion (void) {
@@ -77,8 +77,8 @@ int16_t ADXL345_Angulo (gravedad_t *gravedad) {
 	if (gravedad->indice == 10) gravedad->indice = 0;
 
 	angulo = (int16_t) (acos ((gravedad->suma_gz / 10) /
-			sqrt (pow (gravedad->suma_gx / 10, 2) + pow (gravedad->suma_gy / 10, 2) +
-			pow (gravedad->suma_gz / 10, 2))) * 10 * (180 / PI));
+			    sqrt (pow (gravedad->suma_gx / 10, 2) + pow (gravedad->suma_gy / 10, 2) +
+			    pow (gravedad->suma_gz / 10, 2))) * 10 * (180 / PI));
 	if (gravedad->suma_gx / 10 < 0) return -angulo;
 	else return angulo;
 }
