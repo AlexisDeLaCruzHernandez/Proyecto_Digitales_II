@@ -10,13 +10,13 @@ void GPIO_Inicializacion (void) {
 	gpio_pin_config_t in_config = {kGPIO_DigitalInput};
 	GPIO_PortInit (GPIO, PUERTO_0);
 	GPIO_PinInit (GPIO, PUERTO_0, FILA_1, &in_config);
-    GPIO_PinInit (GPIO, PUERTO_0, FILA_2, &in_config);
-    GPIO_PinInit (GPIO, PUERTO_0, FILA_3, &in_config);
-    GPIO_PinInit (GPIO, PUERTO_0, FILA_4, &in_config);
-    GPIO_PinInit (GPIO, PUERTO_0, COLUMNA_1, &out_config);
-    GPIO_PinInit (GPIO, PUERTO_0, COLUMNA_2, &out_config);
-    GPIO_PinInit (GPIO, PUERTO_0, COLUMNA_3, &out_config);
-    GPIO_PinInit (GPIO, PUERTO_0, COLUMNA_4, &out_config);
+    	GPIO_PinInit (GPIO, PUERTO_0, FILA_2, &in_config);
+    	GPIO_PinInit (GPIO, PUERTO_0, FILA_3, &in_config);
+    	GPIO_PinInit (GPIO, PUERTO_0, FILA_4, &in_config);
+    	GPIO_PinInit (GPIO, PUERTO_0, COLUMNA_1, &out_config);
+    	GPIO_PinInit (GPIO, PUERTO_0, COLUMNA_2, &out_config);
+    	GPIO_PinInit (GPIO, PUERTO_0, COLUMNA_3, &out_config);
+    	GPIO_PinInit (GPIO, PUERTO_0, COLUMNA_4, &out_config);
 }
 
 void SysTick_Inicializacion (void) {
@@ -39,17 +39,17 @@ void I2C_Inicializacion (void) {
 
 uint8_t TECLADO_Lectura (uint8_t Fila_Ini, uint8_t Columna_Ini, uint8_t Fila_Fin, uint8_t Columna_Fin) {
 	for (uint8_t columna = Columna_Ini; columna <= Columna_Fin; columna ++) {
-	    GPIO_PinWrite (GPIO, PUERTO_0, COLUMNA_1 + columna, 0);
-	    for (uint8_t fila = Fila_Ini; fila <= Fila_Fin; fila ++) {
-	    	if (GPIO_PinRead (GPIO, PUERTO_0, FILA_1 + fila) == 0) {
-	    		Delay_ms (50);
+	    	GPIO_PinWrite (GPIO, PUERTO_0, COLUMNA_1 + columna, 0);
+	    	for (uint8_t fila = Fila_Ini; fila <= Fila_Fin; fila ++) {
 	    		if (GPIO_PinRead (GPIO, PUERTO_0, FILA_1 + fila) == 0) {
-	    			GPIO_PinWrite (GPIO, PUERTO_0, COLUMNA_1 + columna, 1);
-	    			return teclas[4 * fila + columna];
+	    			Delay_ms (50);
+	    			if (GPIO_PinRead (GPIO, PUERTO_0, FILA_1 + fila) == 0) {
+	    				GPIO_PinWrite (GPIO, PUERTO_0, COLUMNA_1 + columna, 1);
+	    				return teclas[4 * fila + columna];
+	    			}
 	    		}
 	    	}
-	    }
-	    GPIO_PinWrite (GPIO, PUERTO_0, COLUMNA_1 + columna, 1);;
+	    	GPIO_PinWrite (GPIO, PUERTO_0, COLUMNA_1 + columna, 1);;
 	}
 	return '\0';
 }
@@ -139,20 +139,20 @@ void toggle_op_d (menu_t menu) {
 void mostrar_menu (menu_t menu, uint8_t *positivo, uint8_t *negativo, uint8_t *centimetros, uint8_t *metros) {
 	switch (menu) {
 	case inicio:
-	    OLED_CopiarImagen (inicio_1, sizeof (inicio_1));
+	    	OLED_CopiarImagen (inicio_1, sizeof (inicio_1));
 		break;
 	case alarma:
-	    OLED_CopiarImagen (alarma_2, sizeof (alarma_2));
+	    	OLED_CopiarImagen (alarma_2, sizeof (alarma_2));
 		break;
 	case config_general:
-	    OLED_CopiarImagen (config_general_3, sizeof (config_general_3));
+	    	OLED_CopiarImagen (config_general_3, sizeof (config_general_3));
 		OLED_EscribirNumero (11, 28, contraste / 10, Encender_Pixel);
 		OLED_EscribirNumero (19, 28, contraste % 10, Encender_Pixel);
 		OLED_EscribirNumero (61, 28, volumen / 10, Encender_Pixel);
 		OLED_EscribirNumero (69, 28, volumen % 10, Encender_Pixel);
 		break;
 	case config_grados:
-	    OLED_CopiarImagen (config_grados_4, sizeof (config_grados_4));
+	    	OLED_CopiarImagen (config_grados_4, sizeof (config_grados_4));
 		OLED_EscribirNumero (21, 26, abs (angulo_alarma) / 1000, Encender_Pixel);
 		OLED_EscribirNumero (29, 26, abs (angulo_alarma) / 100 - (abs (angulo_alarma) / 1000) * 10, Encender_Pixel);
 		OLED_EscribirNumero (37, 26, abs (angulo_alarma) / 10 - (abs (angulo_alarma) / 100) * 10, Encender_Pixel);
@@ -161,15 +161,15 @@ void mostrar_menu (menu_t menu, uint8_t *positivo, uint8_t *negativo, uint8_t *c
 		else OLED_ToggleRectangulo (1, 33, 15, 47);
 		break;
 	case mostrar_grados:
-	    OLED_CopiarImagen (mostrar_grados_5, sizeof (mostrar_grados_5));
-	    for (uint8_t i = 0; i < 3; i ++) OLED_EscribirNumero (54 + 8 * i, 30, 0, Encender_Pixel);
+	    	OLED_CopiarImagen (mostrar_grados_5, sizeof (mostrar_grados_5));
+	    	for (uint8_t i = 0; i < 3; i ++) OLED_EscribirNumero (54 + 8 * i, 30, 0, Encender_Pixel);
 		OLED_EscribirNumero (81, 30, 0, Encender_Pixel);
 		OLED_ToggleRectangulo (53, 1, 73, 21);
 		*positivo = 1;
 		*negativo = 0;
 		break;
 	case config_distancia:
-	    OLED_CopiarImagen (config_distancia_6, sizeof (config_distancia_6));
+	    	OLED_CopiarImagen (config_distancia_6, sizeof (config_distancia_6));
 		// Si unidad_alarma_distancia es 1 ya esta guardado en cm y se muestra en cm
 		// Si unidad_alarma_distancia es 100 esta guardado en cm pero se muestra en m, se divide por 100
 		distancia_alarma = distancia_alarma / unidad_distancia_alarma; // Si es cm se deja igual y si es m sacamos los 0
@@ -182,8 +182,8 @@ void mostrar_menu (menu_t menu, uint8_t *positivo, uint8_t *negativo, uint8_t *c
 		else OLED_ToggleRectangulo (1, 33, 22, 47);
 		break;
 	case mostrar_distancia:
-	    OLED_CopiarImagen (mostrar_distancia_7, sizeof (mostrar_distancia_7));
-	    for (uint8_t i = 0; i < 3; i ++) OLED_EscribirNumero (63 + 8 * i, 32, 0, Encender_Pixel);
+	    	OLED_CopiarImagen (mostrar_distancia_7, sizeof (mostrar_distancia_7));
+	    	for (uint8_t i = 0; i < 3; i ++) OLED_EscribirNumero (63 + 8 * i, 32, 0, Encender_Pixel);
 		OLED_EscribirNumero (90, 32, 0, Encender_Pixel);
 		OLED_ToggleRectangulo (51, 27, 60, 36);
 		*positivo = 1;
@@ -197,9 +197,9 @@ void mostrar_menu (menu_t menu, uint8_t *positivo, uint8_t *negativo, uint8_t *c
 
 
 void menu_independiente (menu_t menu, opcion_t op, uint8_t numeros_configuracion, uint8_t con_alarma,
-						 gravedad_t *gravedad, int16_t *angulo, int16_t *angulo_resultante,
-						 int16_t angulo_cero, int32_t *distancia, uint8_t *positivo, uint8_t *negativo,
-						 uint8_t *metros, uint8_t *centimetros) {
+			 gravedad_t *gravedad, int16_t *angulo, int16_t *angulo_resultante,
+			 int16_t angulo_cero, int32_t *distancia, uint8_t *positivo, uint8_t *negativo,
+			 uint8_t *metros, uint8_t *centimetros) {
 	switch (menu) {
 	case inicio: case alarma: break;
 	case config_general:
@@ -306,7 +306,7 @@ void menu_independiente (menu_t menu, opcion_t op, uint8_t numeros_configuracion
 				OLED_EscribirNumero (71, 32, distancia_resultante / 100 - (distancia_resultante / 1000) * 10, Encender_Pixel);
 				OLED_EscribirNumero (79, 32, distancia_resultante / 10 - (distancia_resultante / 100) * 10, Encender_Pixel);
 				OLED_EscribirNumero (90, 32, distancia_resultante - (distancia_resultante / 10) * 10, Encender_Pixel);
-    			OLED_Refresco ();
+    				OLED_Refresco ();
 			}
 			if (con_alarma == 1) {
 				if (abs (*distancia - distancia_alarma) <= 10 * unidad_distancia_alarma) {
