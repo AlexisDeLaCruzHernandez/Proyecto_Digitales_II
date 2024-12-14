@@ -3,6 +3,8 @@
 
 El proyecto realizado consiste en un inclinómetro digital realizado a partir de un acelerómetro y en un odómetro realizado a partir de un encoder rotativo junto a una rueda. El mismo cuenta con alarma auditiva y visual configurable por el usuario.
 
+El informe completo se encuentra en el PDF
+
 ## Esquematico del proyecto
 
 ![](https://github.com/AlexisDeLaCruzHernandez/Imagenes/blob/main/Proyecto%20digitales%20II/Esquematico.JPG "Esquematico del proyecto")
