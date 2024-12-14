@@ -15,40 +15,40 @@
 /*******************************************************************************************************************************
  * Comandos del SSD1306
  ******************************************************************************************************************************/
-#define OLED_SETCONTRAST							0x81
-#define OLED_ENTIREDISPLAYON_OFF					0xA4
-#define OLED_ENTIREDISPLAYON_ON	 					0xA5
-#define OLED_SETNORMALDISPLAY 						0xA6
-#define OLED_SETINVERSEDISPLAY 						0xA7
-#define OLED_SETDISPLAYOFF 							0xAE
-#define OLED_SETDISPLAYON							0xAF
-#define OLED_SETDISPLAYOFFSET 						0xD3
-#define OLED_SETCOMPINS 							0xDA
-#define OLED_SETVCOMLEVEL 							0xDB
+#define OLED_SETCONTRAST				0x81
+#define OLED_ENTIREDISPLAYON_OFF			0xA4
+#define OLED_ENTIREDISPLAYON_ON	 			0xA5
+#define OLED_SETNORMALDISPLAY 				0xA6
+#define OLED_SETINVERSEDISPLAY 				0xA7
+#define OLED_SETDISPLAYOFF 				0xAE
+#define OLED_SETDISPLAYON				0xAF
+#define OLED_SETDISPLAYOFFSET 				0xD3
+#define OLED_SETCOMPINS 				0xDA
+#define OLED_SETVCOMLEVEL 				0xDB
 #define OLED_SETDISPLAYCLOCKDIVOSCILLATORFREQUENCY	0xD5
-#define OLED_SETPRECHARGEPERIOD						0xD9
-#define OLED_SETMULTIPLEXRATIO						0xA8
-#define OLED_SETLOWERCOLUMN							0x00
-#define OLED_SETHIGHERCOLUMN						0x10
-#define OLED_SETDISPLAYSTARTLINE					0x40
-#define OLED_SETMEMORYADDRESSINGMODE 				0x20
-#define OLED_SETCOLUMNADDRESS						0x21
-#define OLED_SETPAGEADDRESS							0x22
-#define OLED_COMSCANTOPLOW 							0xC0
-#define OLED_COMSCANLOWTOP 							0xC8
-#define OLED_SETSEGMENTREMAP 						0xA0
-#define OLED_SETCHARGEPUMP 							0x8D
-#define OLED_ACTIVATE_SCROLL 						0x2F
-#define OLED_DEACTIVATE_SCROLL 						0x2E
-#define OLED_SET_VERTICAL_SCROLL_AREA				0xA3
-#define OLED_RIGHT_HORIZONTAL_SCROLL 				0x26
-#define OLED_LEFT_HORIZONTAL_SCROLL 				0x27
+#define OLED_SETPRECHARGEPERIOD				0xD9
+#define OLED_SETMULTIPLEXRATIO				0xA8
+#define OLED_SETLOWERCOLUMN				0x00
+#define OLED_SETHIGHERCOLUMN				0x10
+#define OLED_SETDISPLAYSTARTLINE			0x40
+#define OLED_SETMEMORYADDRESSINGMODE 	 		0x20
+#define OLED_SETCOLUMNADDRESS				0x21
+#define OLED_SETPAGEADDRESS				0x22
+#define OLED_COMSCANTOPLOW 				0xC0
+#define OLED_COMSCANLOWTOP 				0xC8
+#define OLED_SETSEGMENTREMAP 				0xA0
+#define OLED_SETCHARGEPUMP 				0x8D
+#define OLED_ACTIVATE_SCROLL 				0x2F
+#define OLED_DEACTIVATE_SCROLL 				0x2E
+#define OLED_SET_VERTICAL_SCROLL_AREA			0xA3
+#define OLED_RIGHT_HORIZONTAL_SCROLL 			0x26
+#define OLED_LEFT_HORIZONTAL_SCROLL 			0x27
 #define OLED_VERTICAL_AND_RIGHT_HORIZONTAL_SCROLL	0x29
 #define OLED_VERTICAL_AND_LEFT_HORIZONTAL_SCROLL 	0x2A
 /*******************************************************************************************************************************
  * Address del SSD1306
  ******************************************************************************************************************************/
-#define SSD1306_ADDRESS								0x3C
+#define SSD1306_ADDRESS					0x3C
 /*******************************************************************************************************************************
  * Ancho y alto del display
  ******************************************************************************************************************************/
