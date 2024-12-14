@@ -1,7 +1,7 @@
 #include "definitions.h"
 
 uint8_t tecla_b (opcion_t *op, menu_t *menu, uint8_t *con_alarma, modo_t *modo, uint8_t *numeros_configuracion,
-				 int16_t *angulo_cero, int16_t angulo, int32_t *distancia, gravedad_t *gravedad) {
+		 int16_t *angulo_cero, int16_t angulo, int32_t *distancia, gravedad_t *gravedad) {
 	switch (*op) {
 	case ninguno: break;
 	case op_a:
@@ -53,9 +53,9 @@ uint8_t tecla_b (opcion_t *op, menu_t *menu, uint8_t *con_alarma, modo_t *modo, 
 		break;
 	case config_grados:
 		signo_angulo_alarma = signo_angulo_alarma * (-1);
-    	angulo_alarma = angulo_alarma * signo_angulo_alarma;
-    	cambio_de_config = 1;
-    	break;
+    		angulo_alarma = angulo_alarma * signo_angulo_alarma;
+    		cambio_de_config = 1;
+    		break;
 	case mostrar_grados:
 		*angulo_cero = angulo;
 	case mostrar_distancia:
@@ -74,7 +74,7 @@ uint8_t tecla_b (opcion_t *op, menu_t *menu, uint8_t *con_alarma, modo_t *modo, 
 			unidad_distancia_alarma = 1;
 			distancia_alarma = distancia_alarma / 100;
 		}
-    	cambio_de_config = 1;
+    		cambio_de_config = 1;
 		break;
 	}
 	return 0;
